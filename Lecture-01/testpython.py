@@ -1,1 +1,1 @@
-print('Hello Adwanced Web 55')
+print('Hello Adwanced Web')
