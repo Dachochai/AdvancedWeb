@@ -6,4 +6,4 @@ def hello():
     return "Hello Dachochai from Server Start 555"
 
 if __name__ == "__main__":
-    server.run(host='0.0.0.0', port=88)
+    server.run(host='0.0.0.0', port=80)
