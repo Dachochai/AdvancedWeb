@@ -12,7 +12,7 @@ try:
 
     cursor.execute("SELECT version();")
     record = cursor.fetchone()
-    print("You are connected to - ", record, "\n")
+    print("You are connected to Dachochai_DB", record, "\n")
 
 except (Exception, psycopg2.Error) as error:
     print("Error while connecting to PostrgeSQL", error)
