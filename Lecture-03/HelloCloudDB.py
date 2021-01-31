@@ -39,14 +39,14 @@ def add_staff():
 
     return staff_schema.jsonify(new_staff)
 
-# # Get All Staffs
+# Get All Staffs
 @app.route('/staffs', methods=['GET'])
 def get_staffs():
     all_staffs = Staffs.query.all()
     result = staffs_schema.dump(all_staffs)
     return jsonify(result)
 
-# # Get Single Staff
+# Get Single Staff
 @app.route('/staff/<id>', methods=['GET'])
 def get_staff(id):
     staff = Staffs.query.get(id)
