@@ -24,19 +24,6 @@ class Staffs(db.Model):
         self.email = email
         self.phone = phone
 
-# # Get All Staffs
-# @app.route('/staffs', methods=['GET'])
-# def get_staffs():
-#     all_staffs = Staffs.query.all()
-#     result = staffs_schema.dump(all_staffs)
-#     return jsonify(result)
-
-# # Get Single Staff
-# @app.route('/staff/<id>', methods=['GET'])
-# def get_staff(id):
-#     staff = Staffs.query.get(id)
-#     return staff_schema.jsonify(staff)
-
 # Create a Staff
 @app.route('/staff', methods=['POST'])
 def add_staff():
@@ -51,6 +38,19 @@ def add_staff():
     db.session.commit()
 
     return staff_schema.jsonify(new_staff)
+
+# # Get All Staffs
+@app.route('/staffs', methods=['GET'])
+def get_staffs():
+    all_staffs = Staffs.query.all()
+    result = staffs_schema.dump(all_staffs)
+    return jsonify(result)
+
+# # Get Single Staff
+@app.route('/staff/<id>', methods=['GET'])
+def get_staff(id):
+    staff = Staffs.query.get(id)
+    return staff_schema.jsonify(staff)
 
 # Update a Staff
 @app.route('/staff/<id>', methods=['PUT'])
