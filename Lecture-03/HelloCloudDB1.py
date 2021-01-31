@@ -42,6 +42,27 @@ def get_staffs():
     result = staffs_schema.dump(all_staffs)
     return jsonify(result)
 
+# Get Single Staff
+@app.route('/staff/<id>', methods=['GET'])
+def get_staff(id):
+    staff = Staffs.query.get(id)
+    return staff_schema.jsonify(staff)
+
+# Create a Staff
+@app.route('/staff', methods=['POST'])
+def add_staff():
+    id = request.json['id']
+    name = request.json['name']
+    email = request.json['email']
+    phone = request.json['phone']
+
+    new_staff = Staffs(id, name, email, phone)
+
+    db.session.add(new_staff)
+    db.session.commit()
+
+    return staff_schema.jsonify(new_staff)
+
 # Update a Staff
 @app.route('/staff/<id>', methods=['PUT'])
 def update_staff(id):
