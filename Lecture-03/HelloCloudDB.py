@@ -82,7 +82,7 @@ staffs_schema = StaffSchema(many=True)
 # Web Root Hello
 @app.route('/', methods=['GET'])
 def get():
-    return jsonify({'ms': 'Hello Cloud Patcharapong'})
+    return jsonify({'ms': 'Hello Cloud DB'})
 
 @app.route('/staffs', methods=['GET'])
 def get_staffs():
