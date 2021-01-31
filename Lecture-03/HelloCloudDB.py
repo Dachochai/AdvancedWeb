@@ -31,11 +31,11 @@ class Staffs(db.Model):
 #     result = staffs_schema.dump(all_staffs)
 #     return jsonify(result)
 
-# Get Single Staff
-@app.route('/staff/<id>', methods=['GET'])
-def get_staff(id):
-    staff = Staffs.query.get(id)
-    return staff_schema.jsonify(staff)
+# # Get Single Staff
+# @app.route('/staff/<id>', methods=['GET'])
+# def get_staff(id):
+#     staff = Staffs.query.get(id)
+#     return staff_schema.jsonify(staff)
 
 # Create a Staff
 @app.route('/staff', methods=['POST'])
