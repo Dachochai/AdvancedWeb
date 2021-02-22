@@ -5,7 +5,7 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 
-connect = MongoClient("mongodb://admin:SRPfhl64026@node9148-advweb-10.app.ruk-com.cloud:11012")
+connect = MongoClient("mongodb://admin:SRPfhl64026@10.100.2.125:27017")
 db = connect["my_db"]
 
 @app.route('/')
