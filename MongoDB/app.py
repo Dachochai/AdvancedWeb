@@ -88,7 +88,7 @@ def update_job(position):
     return jsonify(output)
 
 @app.route('/all/<position>', methods=['DELETE'])
-def delete_character(position):
+def delete_job(position):
     data = db.job_db
     x = data.find_one({'position' : position})
     data_id = data.delete_one(x)
