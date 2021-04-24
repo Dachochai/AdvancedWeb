@@ -6,3 +6,9 @@ def has_valid_price(product):
 	if type(product["price"]) == str or product["price"] == None:
 		return False
 	return product["price"] >= 0
+
+# A = input("Enter product : ")
+# B = float(input("Enter price : "))
+# product = { "product": A, "price": B }
+
+# print(has_valid_price(product))
