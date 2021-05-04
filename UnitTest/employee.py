@@ -1,4 +1,4 @@
-import request
+import requests
 from requests.models import Response
 
 class Employee:
